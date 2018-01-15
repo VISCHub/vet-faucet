@@ -1,4 +1,4 @@
-## Sokol POA Network faucet
+## VET Network faucet
 
 ### Building from source
 
