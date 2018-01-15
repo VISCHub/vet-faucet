@@ -1,9 +1,16 @@
+const ethUtil = require('ethereumjs-util');
+
 module.exports = function (app) {
 	var EthereumTx = app.EthereumTx;
 	var generateErrorResponse = app.generateErrorResponse;
 	var config = app.config;
 	var configureWeb3 = app.configureWeb3;
 	var validateCaptcha = app.validateCaptcha;
+
+    const senderPrivateKey = config.Ethereum[config.environment].privateKey;
+    const privateKeyHex = Buffer.from(senderPrivateKey, 'hex')
+    const senderAddr = ethUtil.privateToAddress(privateKeyHex);
+    console.log("The sender address: 0x" + senderAddr.toString('hex'));
 
 	app.post('/', function(request, response) {
 		var recaptureResponse = request.body.captcha;
@@ -41,7 +48,7 @@ module.exports = function (app) {
 				});
 		  }
 		  else {
-		  	return generateErrorResponse(response, {code: 500, title: "Error", message: "7days for each address, please back later."});
+		  	return generateErrorResponse(response, {code: 500, title: "Error", message: "7 days for each address, please back later."});
 		  }
 		});
 
@@ -57,16 +64,18 @@ module.exports = function (app) {
 	}
 
 	function configureWeb3Response(err, web3, receiver, response) {
-		if (err) return generateErrorResponse(response, err);
+		if (err) {
+            return generateErrorResponse(response, err);
+        }
 
-		var senderPrivateKey = config.Ethereum[config.environment].privateKey;
-		const privateKeyHex = Buffer.from(senderPrivateKey, 'hex')
-		if (!web3.isAddress(receiver)) return generateErrorResponse(response, {code: 500, title: "Error", message: "invalid address"});
+		if (!web3.isAddress(receiver)) {
+            return generateErrorResponse(response, {code: 500, title: "Error", message: "invalid address"});
+        }
 
 		var gasPrice = parseInt(web3.eth.gasPrice);
 		var gasPriceHex = web3.toHex(gasPrice);
 		var amount = parseInt(web3.toWei(config.Ethereum.etherToTransfer, "ether"));
-		var nonce = web3.eth.getTransactionCount(config.Ethereum[config.environment].account);
+		var nonce = web3.eth.getTransactionCount(senderAddr);
 		var nonceHex = web3.toHex(nonce);
 		const rawTx = {
 		  nonce: nonceHex,
