@@ -10,7 +10,7 @@
 6. `npm install`
 7. `npm run sass`
 8. `npm run coffee`
-9. Go to project's root and run `npm start`. Sokol POA Network faucet will be launched at `http://localhost:5000`
+9. Go to project's root and run `npm start`. VET Network faucet will be launched at `http://localhost:5000`
 
 ### Server config.json (`./config.json`) with placeholders
 ```
