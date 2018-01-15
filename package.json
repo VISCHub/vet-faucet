@@ -1,0 +1,19 @@
+{
+  "name": "Vet-network-faucet",
+  "version": "1.0.0",
+  "description": "Việt Nam Ethereum Testnet Network faucet",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "poanetwork",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "ethereumjs-tx": "^1.3.1",
+    "express": "^4.15.2",
+    "mongoose": "^4.13.9",
+    "querystring": "^0.2.0",
+    "web3": "^0.19.1"
+  }
+}

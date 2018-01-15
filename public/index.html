@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Việt Nam Ethereum Tesnet - VET faucet</title>
+    <link rel="stylesheet" type="text/css" href="./assets/stylesheets/application.css">
+    <link rel="apple-touch-icon" href="./favicons/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./favicons/favicon-192x192.png">
+    <link rel="mask-icon" color="#6151cc" href="./favicons/safari-pinned-tab.svg">
+    <link rel="manifest" href="./favicons/manifest.webmanifest">
+    <link href="./favicons/favicon.ico" rel="icon" type="image/x-icon">
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="#" style="text-align: center;font-size: 40px;text-decoration:none;" class="header">Việt Nam Ethereum Tesnet - VET faucet</a>
+      </div>
+    </header>
+    <section class="content">
+      <form action="/" method="POST" id="faucetForm">
+        <div class="request-tokens">
+            <!-- <h1></h1> -->
+            <input type="text" id="receiver" name="receiver" placeholder="Wallet address" />
+            <h2>
+              Please use <a href="#">http://eth1.uit.edu.vn:8545</a> RPC to connect<br>to the VET.
+            </h2>
+            <div class="text-xs-center">
+          <div class="g-recaptcha" data-sitekey="6LdATkAUAAAAALjLvLC4fcPESWD4BmLlOmFi_oWJ"></div>
+        </div>
+            <button type="submit" id="requestTokens" class="request-tokens-button">Request 20.0 ETH</button>
+        </div>
+      </form>
+    </section>
+    <div class="loading-container hidden">
+      <div class="loading">
+        <div class="loading-i"></div>
+        <div class="loading-i"></div>
+        <div class="loading-i"></div>
+        <div class="loading-i"></div>
+        <div class="loading-i"></div>
+        <div class="loading-i"></div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <p class="rights">2017 VET Network. All rights reserved.</p>
+        <div class="socials">
+          <a href="https://twitter.com/VTestnet" class="social social_twitter"></a>
+          <a href="https://t.me/vietnamblockchaindevelopers" class="social social_telegram"></a>
+          <a href="https://github.com/VISCHub" class="social social_github"></a>
+        </div>
+      </div>
+    </footer>
+    <script src="./assets/javascripts/application.js?v=1.4" type="text/javascript"></script>
+  </body>
+</html>

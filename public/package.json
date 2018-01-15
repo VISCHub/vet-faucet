@@ -1,0 +1,34 @@
+{
+  "name": "faucet-front",
+  "version": "1.0.0",
+  "description": "Việt Nam Ethereum Testnet VET Network faucet frontend",
+  "main": "gulpfile.js",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-add-src": "^0.2.0",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-concat-css": "^3.0.0",
+    "gulp-include": "^2.3.1",
+    "gulp-order": "^1.1.1",
+    "gulp-postcss": "^7.0.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sass-glob": "^1.0.8",
+    "gulp-uglify": "^3.0.0",
+    "gulp-uglifycss": "^1.0.9",
+    "http-server": "^0.10.0"
+  },
+  "scripts": {
+    "sass": "gulp sass",
+    "coffee": "gulp javascript",
+    "watch": "gulp watch",
+    "start": "http-server -a localhost -p 8000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/minhvn/vet-faucet.git"
+  },
+  "keywords": [],
+  "author": "VET",
+  "license": "MIT"
+}

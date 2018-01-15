@@ -1,0 +1,4 @@
+node_modules/
+config.json
+public/assets/javascripts/application.js
+public/stylesheets/application.css
