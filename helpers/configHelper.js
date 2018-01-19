@@ -1,10 +1,10 @@
-module.exports = function (app) {
-	var fs = app.fs;
+module.exports = function(app) {
+	let fs = app.fs;
 
 	app.getConfig = getConfig;
-	
+
   	function getConfig(cb) {
-		var config = JSON.parse(fs.readFileSync('./config.json', 'utf8'));
+		let config = JSON.parse(fs.readFileSync('./config.json', 'utf8'));
 		cb(config);
 	}
-}
+};

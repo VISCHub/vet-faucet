@@ -40,7 +40,6 @@ app.get('/', function(request, response) {
 
 app.set('port', (process.env.PORT || 8000));
 
-app.listen(app.get('port'), function () {
+app.listen(app.get('port'), function() {
     console.log('Việt Nam Ethereum Testnet Network faucet is running on port', app.get('port'));
 });
-
