@@ -155,3 +155,59 @@ Digest: sha256:1b120424dec4b6ae88861cbd8b1005bb503fd84c14efe37c9c68d80c1cd491ab
 Status: Downloaded newer image for vietlq/fun-static-site:latest
  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
 ```
+
+### List docker network interfaces
+
+```
+$ docker network ls
+NETWORK ID          NAME                DRIVER              SCOPE
+ae3849714d44        bridge              bridge              local
+c0eca36c3104        host                host                local
+fb98513833a6        none                null                local
+```
+
+### Create custom docker network
+
+```
+$ docker network create foodtrucks
+a6e2aeed08ff7f334234265e5e6536046e5bc140a02133cfc1ba892558702e52
+vietlq@Viets-iMac:~/projects/VISC/vet-faucet/docker-practice/based-on-ubuntu[15:10:46]>
+$ docker network ls
+NETWORK ID          NAME                DRIVER              SCOPE
+ae3849714d44        bridge              bridge              local
+a6e2aeed08ff        foodtrucks          bridge              local
+c0eca36c3104        host                host                local
+fb98513833a6        none                null                local
+```
+
+### Run docker image inside a docker network
+
+```
+docker run -dp 9200:9200 --net foodtrucks --name es elasticsearch
+```
+
+Also deamonize it and give it a name.
+
+### Inspect a docker network
+
+```
+$ docker network inspect foodtrucks
+[
+    {
+        "Name": "foodtrucks",
+        "Id": "a6e2aeed08ff7f334234265e5e6536046e5bc140a02133cfc1ba892558702e52",
+        "Created": "2018-01-26T15:10:48.846844639Z",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": {},
+            "Config": [
+                {
+                    "Subnet": "172.18.0.0/16",
+                    "Gateway": "172.18.0.1"
+                }
+            ]
+        },
+```
