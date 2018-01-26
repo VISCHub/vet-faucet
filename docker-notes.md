@@ -82,22 +82,21 @@ EOF
 
 ```
 $ docker build -t vietlq/fun-static-site .
-Sending build context to Docker daemon  2.048kB
+Sending build context to Docker daemon  8.704kB
 Step 1/3 : FROM python:3-onbuild
-3-onbuild: Pulling from library/python
-f49cf87b52c1: Pull complete
-7b491c575b06: Pull complete
-b313b08bab3b: Pull complete
-51d6678c3f0e: Pull complete
-09f35bd58db2: Pull complete
-0f9de702e222: Pull complete
-73911d37fcde: Pull complete
-99a87e214c92: Pull complete
-636f90eed4e0: Pull complete
-Digest: sha256:e8ecacdcdd9395220297fc416ef8307e748de60b4d8de07c341aea19a90838d1
-Status: Downloaded newer image for python:3-onbuild
 # Executing 3 build triggers
-COPY failed: stat /var/lib/docker/tmp/docker-builder661160443/requirements.txt: no such file or directory
+ ---> Using cache
+ ---> Using cache
+ ---> Using cache
+ ---> 9d83b68a12a1
+Step 2/3 : EXPOSE 5000
+ ---> Using cache
+ ---> 43e3635b8545
+Step 3/3 : CMD ["python", "./app.py"]
+ ---> Using cache
+ ---> 657f49929814
+Successfully built 657f49929814
+Successfully tagged vietlq/fun-static-site:latest
 ```
 
 ### Login into Docker Hub
@@ -108,4 +107,26 @@ Login with your Docker ID to push and pull images from Docker Hub. If you don't 
 Username: vietlq
 Password:
 Login Succeeded
+```
+
+### Push your image to Docker Hub
+
+https://docs.docker.com/docker-cloud/builds/repos/
+
+```
+$ docker push vietlq/fun-static-site
+The push refers to repository [docker.io/vietlq/fun-static-site]
+6eced465e1c6: Pushed
+8bf0b52b92a6: Pushed
+703a04d6e53a: Pushed
+1c002af6dbb1: Mounted from library/python
+6dce5c484bde: Mounted from library/python
+057c34df1f1a: Mounted from library/python
+3d358bf2f209: Mounted from library/python
+0870b36b7599: Mounted from library/python
+8fe6d5dcea45: Mounted from library/python
+06b8d020c11b: Mounted from library/python
+b9914afd042f: Mounted from library/python
+4bcdffd70da2: Mounted from library/python
+latest: digest: sha256:1b120424dec4b6ae88861cbd8b1005bb503fd84c14efe37c9c68d80c1cd491ab size: 2840
 ```
