@@ -35,3 +35,14 @@ Sokol POA Network faucet will be launched at `http://localhost:8000`
     }
   }
 }
+
+### Captcha
+
+Use test keys provided by Google:
+
+```
+Site key: 6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI
+Secret key: 6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe
+```
+
+For more information, read: https://developers.google.com/recaptcha/docs/faq

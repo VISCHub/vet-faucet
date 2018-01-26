@@ -1,6 +1,6 @@
 FROM vietlq/vet-faucet-base:latest
 
-COPY . /opt/vet-faucet
+COPY faucet /opt/vet-faucet
 WORKDIR /opt/vet-faucet
 
 RUN npm install
