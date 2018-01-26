@@ -233,3 +233,9 @@ services:
     links:
       - es
 ```
+
+### Docker ADD vs COPY
+
+https://stackoverflow.com/questions/24958140/what-is-the-difference-between-the-copy-and-add-commands-in-a-dockerfile
+
+https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/
