@@ -1,4 +1,4 @@
-FROM mongo-express
+FROM node
 
 RUN apt-get update -yqq
 RUN apt-get upgrade -yqq
