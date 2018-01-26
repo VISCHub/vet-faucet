@@ -211,3 +211,25 @@ $ docker network inspect foodtrucks
             ]
         },
 ```
+
+### Docker Compose dependency (ordera and expose of ports)
+
+The keyword "depends_on" guarantees correct order. The keyword "links" guarantees exposure of ports.
+
+https://stackoverflow.com/questions/35832095/difference-between-links-and-depends-on-in-docker-compose-yml
+
+```
+$ cat docker-compose.yml
+version: '3'
+services:
+  es:
+    image: "elasticsearch"
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - es
+    links:
+      - es
+```
