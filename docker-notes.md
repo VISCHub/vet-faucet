@@ -37,8 +37,28 @@ $ docker port fe009ff63d78
 80/tcp -> 0.0.0.0:32769
 ```
 
+Note that 32768 and 32769 were chosen randomly by the docker.
+
+### Expose docker image ports via custom ports
+
+```
+docker run --rm -p 8888:80 prakhar1989/static-site
+```
+
 ### Run docker image in detached mode & expose ports
 
 ```
 docker run -d -P --name static-site prakhar1989/static-site
+```
+
+### Stop a running docker image
+
+```
+docker stop image_id
+```
+
+### Search for a docker image
+
+```
+docker search mongo
 ```
