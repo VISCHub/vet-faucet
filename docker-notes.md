@@ -99,3 +99,13 @@ Status: Downloaded newer image for python:3-onbuild
 # Executing 3 build triggers
 COPY failed: stat /var/lib/docker/tmp/docker-builder661160443/requirements.txt: no such file or directory
 ```
+
+### Login into Docker Hub
+
+```
+$ docker login
+Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
+Username: vietlq
+Password:
+Login Succeeded
+```
