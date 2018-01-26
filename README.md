@@ -51,3 +51,4 @@ For more information, read: https://developers.google.com/recaptcha/docs/faq
 
 * https://github.com/wsargent/docker-cheat-sheet
 * http://containertutorials.com/volumes/volume_from_image.html
+* https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/

@@ -1,0 +1,17 @@
+version: '3'
+services:
+  db:
+    image: "mongo"
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - configs:/opt/vet-faucet/configs:ro
+    depends_on:
+      - db
+    links:
+      - db
+volumes:
+  configs:
+    external: true
