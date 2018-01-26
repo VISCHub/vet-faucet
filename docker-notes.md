@@ -130,3 +130,28 @@ b9914afd042f: Mounted from library/python
 4bcdffd70da2: Mounted from library/python
 latest: digest: sha256:1b120424dec4b6ae88861cbd8b1005bb503fd84c14efe37c9c68d80c1cd491ab size: 2840
 ```
+
+Now check the web URL: https://cloud.docker.com/swarm/vietlq/repository/docker/vietlq/fun-static-site/general
+
+And fetch on another machine to verify that it works:
+
+```
+$ docker run --rm -p 8888:5000 vietlq/fun-static-site
+Unable to find image 'vietlq/fun-static-site:latest' locally
+latest: Pulling from vietlq/fun-static-site
+f49cf87b52c1: Pull complete
+7b491c575b06: Pull complete
+b313b08bab3b: Pull complete
+51d6678c3f0e: Pull complete
+09f35bd58db2: Pull complete
+0f9de702e222: Pull complete
+73911d37fcde: Pull complete
+99a87e214c92: Pull complete
+636f90eed4e0: Pull complete
+56dee1fc423a: Pull complete
+f83d9eb03019: Pull complete
+28293e65d724: Pull complete
+Digest: sha256:1b120424dec4b6ae88861cbd8b1005bb503fd84c14efe37c9c68d80c1cd491ab
+Status: Downloaded newer image for vietlq/fun-static-site:latest
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+```
