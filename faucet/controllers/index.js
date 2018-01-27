@@ -27,7 +27,7 @@ module.exports = function(app) {
 		if (!out) return generateErrorResponse(response, {code: 500, title: 'Error', message: 'Invalid captcha'});
 		if (!out.success) return generateErrorResponse(response, {code: 500, title: 'Error', message: 'Invalid captcha'});
 		let mongoose = require('mongoose');
-		mongoose.connect('mongodb://localhost/wallet');
+		mongoose.connect('mongodb://db/wallet');
 		Wallet.findOne({address: receiver}, function(err, user) {
 		  if (err) throw err;
 		  //console.log(user);

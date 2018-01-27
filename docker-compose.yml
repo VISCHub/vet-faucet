@@ -2,10 +2,12 @@ version: '3'
 services:
   db:
     image: "mongo"
+    hostname: vet-faucet-db
     ports:
       - "27017:27017"
   web:
     build: .
+    hostname: vet-faucet-web
     ports:
       - "8000:8000"
     volumes:
