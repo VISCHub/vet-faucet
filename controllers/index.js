@@ -7,10 +7,10 @@ module.exports = function(app) {
 	let configureWeb3 = app.configureWeb3;
 	let validateCaptcha = app.validateCaptcha;
 
-    const senderPrivateKey = config.Ethereum[config.environment].privateKey;
-    const privateKeyHex = Buffer.from(senderPrivateKey, 'hex');
-    const senderAddr = ethUtil.privateToAddress(privateKeyHex);
-    console.log('The sender address: 0x' + senderAddr.toString('hex'));
+  const senderPrivateKey = config.Ethereum[config.environment].privateKey;
+  const privateKeyHex = Buffer.from(senderPrivateKey, 'hex');
+  const senderAddr = ethUtil.privateToAddress(privateKeyHex);
+  console.log('The sender address: 0x' + senderAddr.toString('hex'));
 
 	app.post('/', function(request, response) {
 		let recaptureResponse = request.body.captcha;
@@ -73,7 +73,7 @@ module.exports = function(app) {
 		let gasPrice = parseInt(web3.eth.gasPrice);
 		let gasPriceHex = web3.toHex(gasPrice);
 		let amount = parseInt(web3.toWei(config.Ethereum.etherToTransfer, 'ether'));
-		let nonce = web3.eth.getTransactionCount(senderAddr);
+		let nonce = web3.eth.getTransactionCount('0x' + senderAddr.toString('hex'));
 		let nonceHex = web3.toHex(nonce);
 		const rawTx = {
 		  nonce: nonceHex,
