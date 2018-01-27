@@ -35,6 +35,7 @@ Sokol POA Network faucet will be launched at `http://localhost:8000`
     }
   }
 }
+```
 
 ### Captcha
 
