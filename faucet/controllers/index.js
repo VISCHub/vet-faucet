@@ -30,10 +30,10 @@ module.exports = function(app) {
 		mongoose.connect('mongodb://localhost/wallet');
 		Wallet.findOne({address: receiver}, function(err, user) {
 		  if (err) throw err;
-		  console.log(user);
+		  //console.log(user);
 		  if (!user) {
 		  	// create a new user
-				let newWallet = Wallet({address: receiver});
+				let newWallet = Wallet({address: receiver, createAt: Date.now()});
 				// save the user
 				newWallet.save(function(err) {
 				  if (err) throw err;
@@ -41,7 +41,7 @@ module.exports = function(app) {
 						configureWeb3Response(err, web3, receiver, response);
 					});
 				});
-		  } else if (user && user.createAt <= (Date.now() - (7*24*60*60*1000))) {
+		  } else if (user && user.createAt <= (Date.now() - (3*24*60*60*1000))) {
 		  	configureWeb3(config, function(err, web3) {
 					configureWeb3Response(err, web3, receiver, response);
 				});
