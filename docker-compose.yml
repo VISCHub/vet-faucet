@@ -2,6 +2,8 @@ version: '3'
 services:
   db:
     image: "mongo"
+    ports:
+      - "27017:27017"
   web:
     build: .
     ports:
