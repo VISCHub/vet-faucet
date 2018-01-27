@@ -28,6 +28,7 @@ console.log(config);
 
 var rawIndexHtml = fs.readFileSync(__dirname + '/public/index.tmpl');
 rawIndexHtml = rawIndexHtml.toString().replace('CAPTCHA-SITEKEY', config.Captcha.sitekey);
+rawIndexHtml = rawIndexHtml.replace('REQUEST_X_ETH', config.Ethereum.etherToTransfer);
 // var defaultSiteKey = '6LdATkAUAAAAALjLvLC4fcPESWD4BmLlOmFi_oWJ';
 
 app.use(express.static(__dirname + '/public'));

@@ -1,6 +1,5 @@
 $(function() {
 	var loader = $(".loading-container");
-	//$( "#faucetForm" ).submit(function( e ) {
 	$( "#requestTokens" ).click(function( e ) {
 		e.preventDefault();
     	$this = $(this);
@@ -40,7 +39,7 @@ $(function() {
 				$("#receiver").val('');
 				loader.addClass("hidden");
 				swal("Success",
-				  "20.0 ETH is successfully transfered to " + receiver + "</a>",
+				  "20.0 ETH is successfully transferred to " + receiver + "</a>",
 				  "success"
 				);
 				grecaptcha.reset();
