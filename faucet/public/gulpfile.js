@@ -12,6 +12,12 @@ const concat = require('gulp-concat');
 const concatCss = require('gulp-concat-css');
 const uglify = require('gulp-uglify');
 
+gulp.task( 'default', function() {
+  gulp.start('sass');
+  gulp.start('javascript');
+  gulp.start('watch');
+});
+
 gulp.task('sass', function() {
   return gulp.src([
     'assets/stylesheets/*.scss',
