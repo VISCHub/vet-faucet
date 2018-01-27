@@ -1,4 +1,4 @@
-FROM node
+FROM node:8
 
 RUN apt-get update -yqq
 RUN apt-get upgrade -yqq
