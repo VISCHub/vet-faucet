@@ -74,6 +74,7 @@ If you want to save yourself from trouble, do check:
 * https://docs.docker.com/compose/networking/
 * https://askubuntu.com/questions/505506/how-to-get-bash-or-ssh-into-a-running-container-in-background-mode
 * https://stackoverflow.com/questions/26145351/why-doesnt-chown-work-in-dockerfile
+* https://gist.github.com/bastman/5b57ddb3c11942094f8d0a97d461b430
 
 ### Sender & Recipient
 
