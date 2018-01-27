@@ -75,6 +75,6 @@ If you want to save yourself from trouble, do check:
 * https://askubuntu.com/questions/505506/how-to-get-bash-or-ssh-into-a-running-container-in-background-mode
 * https://stackoverflow.com/questions/26145351/why-doesnt-chown-work-in-dockerfile
 
-### Recipient
+### Sender & Recipient
 
-0xc225efE07Db9d3a85e18306CbEA8dE1b667e0e92
+We are sending from `0xc225efE07Db9d3a85e18306CbEA8dE1b667e0e92`. If you feel generous, feel free to fund our address.

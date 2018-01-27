@@ -10,11 +10,13 @@
     "gasLimit": "type Ethereum transaction gas limit here, for example, 0x7b0c",
     "live": {
       "rpc": "http://127.0.0.1:8545",
-      "privateKey": "type private key of sender here, for example, 54dd4125ed5418a7a68341413f4006256159f9f5ade8fed94e82785ef59523ab"
+      "privateKey": "type private key of sender here, for example, 54dd4125ed5418a7a68341413f4006256159f9f5ade8fed94e82785ef59523ab",
+      "waitDays": "Days to wait between funding requests, say 3"
     },
     "dev": {
       "rpc": "http://127.0.0.1:8545",
-      "privateKey": "type private key of sender here, for example, 54dd4125ed5418a7a68341413f4006256159f9f5ade8fed94e82785ef59523ab"
+      "privateKey": "type private key of sender here, for example, 54dd4125ed5418a7a68341413f4006256159f9f5ade8fed94e82785ef59523ab",
+      "waitDays": 1
     }
   }
 }

@@ -10,7 +10,8 @@
     "gasLimit": "0x7b0c",
     "dev": {
       "rpc": "https://vet-rpc.visc.network/",
-      "privateKey": "54dd4125ed5418a7a68341413f4006256159f9f5ade8fed94e82785ef59523ab"
+      "privateKey": "54dd4125ed5418a7a68341413f4006256159f9f5ade8fed94e82785ef59523ab",
+      "waitDays": 1
     }
   }
 }
