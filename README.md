@@ -58,3 +58,4 @@ For more information, read: https://developers.google.com/recaptcha/docs/faq
 * http://containertutorials.com/volumes/volume_from_image.html
 * https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/
 * https://docs.docker.com/compose/networking/
+* https://askubuntu.com/questions/505506/how-to-get-bash-or-ssh-into-a-running-container-in-background-mode
