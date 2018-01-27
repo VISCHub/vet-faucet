@@ -17,7 +17,7 @@ $(function() {
 		$.ajax({
 		  	url:"/",
 		  	type:"POST",
-		  	data: {//$this.serialize(),
+		  	data: {
 		  		receiver: receiver,
 		  		captcha: captcha
 		  	}
@@ -39,7 +39,7 @@ $(function() {
 				$("#receiver").val('');
 				loader.addClass("hidden");
 				swal("Success",
-				  "1.0 ETH is successfully transferred to " + receiver + "</a>",
+				  "REQUEST_X_ETH ETH is successfully transferred to " + receiver + "</a>",
 				  "success"
 				);
 				grecaptcha.reset();

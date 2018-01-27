@@ -1,5 +1,6 @@
 'use strict';
 
+const fs = require('fs');
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const sassGlob = require('gulp-sass-glob');
@@ -11,6 +12,16 @@ const order = require('gulp-order');
 const concat = require('gulp-concat');
 const concatCss = require('gulp-concat-css');
 const uglify = require('gulp-uglify');
+const replace = require('gulp-replace');
+
+// Get config
+const configPath = '../../configs/config.json';
+const configExists = fs.existsSync(configPath, fs.F_OK);
+if (configExists !== true) {
+  console.error("Could not find the file " + configPath);
+  process.exit(-1);
+}
+const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
 
 gulp.task( 'default', function() {
   gulp.start('sass');
@@ -40,7 +51,8 @@ gulp.task('javascript', function() {
     ], {base: '.'}))
     .pipe(include())
     .pipe(concat('application.js'))
-    //.pipe(uglify())
+    .pipe(replace(/REQUEST_X_ETH/g, config.Ethereum.etherToTransfer))
+    .pipe(uglify())
     .pipe(gulp.dest('assets/javascripts'));
 });
 
