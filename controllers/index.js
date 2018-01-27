@@ -31,9 +31,10 @@ module.exports = function(app) {
 		Wallet.findOne({address: receiver}, function(err, user) {
 		  if (err) throw err;
 		  //console.log(user);
+		  let todayTime = Date.now();
 		  if (!user) {
 		  	// create a new user
-				let newWallet = Wallet({address: receiver, createAt: Date.now()});
+				let newWallet = Wallet({address: receiver, createdAt: todayTime});
 				// save the user
 				newWallet.save(function(err) {
 				  if (err) throw err;
@@ -41,7 +42,7 @@ module.exports = function(app) {
 						configureWeb3Response(err, web3, receiver, response);
 					});
 				});
-		  } else if (user && user.createAt <= (Date.now() - (3*24*60*60*1000))) {
+		  } else if (user && user.createdAt <= (todayTime - (3*24*60*60*1000))) {
 		  	configureWeb3(config, function(err, web3) {
 					configureWeb3Response(err, web3, receiver, response);
 				});
