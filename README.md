@@ -12,7 +12,7 @@
     npm run sass
     npm run coffee
     ```
-9. Go out to project `faucet` and run `npm start`.
+6. Go out to project `faucet` and run `npm start`.
 
 Faucet will be launched at `http://localhost:8000` .
 
@@ -53,6 +53,20 @@ Secret key: 6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe
 For more information, read: https://developers.google.com/recaptcha/docs/faq
 
 ### Docker
+
+There are only 2 commands you need to run:
+
+```
+# build.sh
+docker-compose build
+```
+
+```
+# run.sh
+docker-compose up -d
+```
+
+If you want to save yourself from trouble, do check:
 
 * https://github.com/wsargent/docker-cheat-sheet
 * http://containertutorials.com/volumes/volume_from_image.html
