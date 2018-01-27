@@ -14,7 +14,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - configs:/opt/vet-faucet/configs:ro
+      - "./configs:/opt/vet-faucet/configs:ro"
     depends_on:
       - db
     links:
