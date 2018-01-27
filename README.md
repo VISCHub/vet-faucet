@@ -12,7 +12,7 @@
     npm run sass
     npm run coffee
     ```
-9. Go out to project `faucet` and run `npm start`.
+6. Go out to project `faucet` and run `npm start`.
 
 Faucet will be launched at `http://localhost:8000` .
 
@@ -54,7 +54,27 @@ For more information, read: https://developers.google.com/recaptcha/docs/faq
 
 ### Docker
 
+There are only 2 commands you need to run:
+
+```
+# build.sh
+docker-compose build
+```
+
+```
+# run.sh
+docker-compose up -d
+```
+
+If you want to save yourself from trouble, do check:
+
 * https://github.com/wsargent/docker-cheat-sheet
 * http://containertutorials.com/volumes/volume_from_image.html
 * https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/
 * https://docs.docker.com/compose/networking/
+* https://askubuntu.com/questions/505506/how-to-get-bash-or-ssh-into-a-running-container-in-background-mode
+* https://stackoverflow.com/questions/26145351/why-doesnt-chown-work-in-dockerfile
+
+### Recipient
+
+0xc225efE07Db9d3a85e18306CbEA8dE1b667e0e92
