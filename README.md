@@ -35,3 +35,21 @@ Sokol POA Network faucet will be launched at `http://localhost:8000`
     }
   }
 }
+
+### Captcha
+
+Use test keys provided by Google:
+
+```
+Site key: 6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI
+Secret key: 6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe
+```
+
+For more information, read: https://developers.google.com/recaptcha/docs/faq
+
+### Docker
+
+* https://github.com/wsargent/docker-cheat-sheet
+* http://containertutorials.com/volumes/volume_from_image.html
+* https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/
+* https://docs.docker.com/compose/networking/

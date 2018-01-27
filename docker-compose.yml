@@ -1,0 +1,24 @@
+version: '3'
+services:
+  db:
+    image: "mongo:3.6"
+    hostname: vet-faucet-db
+    ports:
+      - "27017:27017"
+    volumes:
+      - ".tmp/data/db:/data/db"
+      - ".tmp/data/configdb:/data/configdb"
+  web:
+    build: .
+    hostname: vet-faucet-web
+    ports:
+      - "8000:8000"
+    volumes:
+      - "./configs:/opt/vet-faucet/configs:ro"
+    depends_on:
+      - db
+    links:
+      - db
+volumes:
+  configs:
+    external: true

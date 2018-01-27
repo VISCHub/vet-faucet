@@ -4,7 +4,7 @@ module.exports = function(app) {
 	app.getConfig = getConfig;
 
   	function getConfig(cb) {
-		let config = JSON.parse(fs.readFileSync('./config.json', 'utf8'));
+		let config = JSON.parse(fs.readFileSync('configs/config.json', 'utf8'));
 		cb(config);
 	}
 };
