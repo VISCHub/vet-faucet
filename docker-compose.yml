@@ -6,7 +6,8 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - .tmp/data:/data
+      - ".tmp/data/db:/data/db"
+      - ".tmp/data/configdb:/data/configdb"
   web:
     build: .
     hostname: vet-faucet-web
