@@ -1,5 +1,14 @@
 ## VET Network faucet
 
+This faucet for Vietnam Ethereum Testnet was forked from POA Network faucet: https://github.com/poanetwork/poa-faucet
+
+We have made a number of changes:
+
+* Dockerization of the faucet. Tested on Linux and Mac
+* Parametrized reCAPTCHA, RPC URI, cool down period in config.json. We hate hardcoding
+* Removed account from the config.json. It's redundant
+* Added sample config.json
+
 ### Building from source
 
 1. Clone repository
