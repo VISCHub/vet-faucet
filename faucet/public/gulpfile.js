@@ -51,7 +51,7 @@ gulp.task('javascript', function() {
     ], {base: '.'}))
     .pipe(include())
     .pipe(concat('application.js'))
-    .pipe(replace(/REQUEST_X_ETH/g, config.Ethereum.etherToTransfer))
+    .pipe(replace(/__REQUEST_X_ETH__/g, config.Ethereum.etherToTransfer))
     .pipe(uglify())
     .pipe(gulp.dest('assets/javascripts'));
 });

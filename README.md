@@ -1,5 +1,14 @@
 ## VET Network faucet
 
+This faucet for Vietnam Ethereum Testnet was forked from POA Network faucet: https://github.com/poanetwork/poa-faucet
+
+We have made a number of changes:
+
+* Dockerization of the faucet. Tested on Linux and Mac
+* Parametrized reCAPTCHA, RPC URI, cool down period in config.json. We hate hardcoding
+* Removed account from the config.json. It's redundant
+* Added sample config.json
+
 ### Building from source
 
 1. Clone repository
@@ -31,11 +40,13 @@ Faucet will be launched at `http://localhost:8000` .
     "gasLimit": "type Ethereum transaction gas limit here, for example, 0x7b0c",
     "live": {
       "rpc": "http://127.0.0.1:8545",
-      "privateKey": "type private key of sender here, for example, 54dd4125ed5418a7a68341413f4006256159f9f5ade8fed94e82785ef59523ab"
+      "privateKey": "type private key of sender here, for example, 54dd4125ed5418a7a68341413f4006256159f9f5ade8fed94e82785ef59523ab",
+      "waitDays": 3
     },
     "dev": {
       "rpc": "http://127.0.0.1:8545",
-      "privateKey": "type private key of sender here, for example, 54dd4125ed5418a7a68341413f4006256159f9f5ade8fed94e82785ef59523ab"
+      "privateKey": "type private key of sender here, for example, 54dd4125ed5418a7a68341413f4006256159f9f5ade8fed94e82785ef59523ab",
+      "waitDays": 1
     }
   }
 }
@@ -74,6 +85,7 @@ If you want to save yourself from trouble, do check:
 * https://docs.docker.com/compose/networking/
 * https://askubuntu.com/questions/505506/how-to-get-bash-or-ssh-into-a-running-container-in-background-mode
 * https://stackoverflow.com/questions/26145351/why-doesnt-chown-work-in-dockerfile
+* https://gist.github.com/bastman/5b57ddb3c11942094f8d0a97d461b430
 
 ### Sender & Recipient
 

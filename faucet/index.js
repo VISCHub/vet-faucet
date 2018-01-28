@@ -27,9 +27,9 @@ app.config = config;
 console.log(config);
 
 var rawIndexHtml = fs.readFileSync(__dirname + '/public/index.tmpl');
-rawIndexHtml = rawIndexHtml.toString().replace('CAPTCHA-SITEKEY', config.Captcha.sitekey);
-rawIndexHtml = rawIndexHtml.replace('REQUEST_X_ETH', config.Ethereum.etherToTransfer);
-// var defaultSiteKey = '6LdATkAUAAAAALjLvLC4fcPESWD4BmLlOmFi_oWJ';
+rawIndexHtml = rawIndexHtml.toString().replace(/__CAPTCHA_SITEKEY__/g, config.Captcha.sitekey);
+rawIndexHtml = rawIndexHtml.replace(/__REQUEST_X_ETH__/g, config.Ethereum.etherToTransfer);
+rawIndexHtml = rawIndexHtml.replace(/__RPC_URI__/g, config.Ethereum[config.environment].rpc);
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json({limit: '50mb'}));

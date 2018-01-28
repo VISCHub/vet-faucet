@@ -39,7 +39,7 @@ $(function() {
 				$("#receiver").val('');
 				loader.addClass("hidden");
 				swal("Success",
-				  "REQUEST_X_ETH ETH is successfully transferred to " + receiver + "</a>",
+				  "__REQUEST_X_ETH__ ETH is successfully transferred to " + receiver + "</a>",
 				  "success"
 				);
 				grecaptcha.reset();
