@@ -9,7 +9,7 @@ module.exports = function(app) {
 	function configureWeb3(config, cb) {
 		let web3;
 		if (typeof web3 !== 'undefined') web3 = new Web3(web3.currentProvider);
-		else web3 = new Web3(new Web3.providers.HttpProvider(config.Ethereum[config.environment].rpc));
+		else web3 = new Web3(new Web3.providers.HttpProvider(config.Ethereum[config.environment].rpcLocal));
 
 		if (!web3.isConnected()) return cb({code: 500, title: 'Error', message: 'check RPC'}, web3);
 
