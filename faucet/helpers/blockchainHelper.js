@@ -43,7 +43,7 @@ module.exports = function(app) {
 	    response.send({
     		code: 200,
     		title: 'Success',
-    		message: '20.0 ETH successfully sent',
+    		message: config.Ethereum.etherToTransfer + ' ETH successfully sent',
     	});
 	}
 };
