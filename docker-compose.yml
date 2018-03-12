@@ -8,9 +8,11 @@ services:
     volumes:
       - "faucet_db:/data/db"
       - "faucet_configdb:/data/configdb"
+    restart: "always"
   web:
     build: .
     hostname: vet-faucet-web
+    restart: "always"
     ports:
       - "8000:8000"
     volumes:
